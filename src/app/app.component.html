@@ -1,5 +1,11 @@
-<h1 class="abc">My name is {{name}}</h1>
-<h1 class="abc">I have {{dogcount}} dog</h1>
-<button (click) = "addDog()">Add Dog</button>
-
+<h1 class="abc">I am {{name}} !!!</h1>
+<h1 class="abc">I have {{dogcount}} dog !!!</h1>
+<button (click)="addDog()">Add Dog</button>
+<div class="box" *ngFor="let i of dogs">
+    <div *ngIf="(i.image!='')">
+        <img src="{{i.image}}" alt="{{i.name}}" title="My Dog {{i.name}}">
+        <p>{{i.name}}</p>
+        <p *ngFor="let j of i.activity">{{i.name}} loves to {{j}}</p>
+    </div>
+</div>
 <router-outlet></router-outlet>
