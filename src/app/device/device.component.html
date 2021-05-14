@@ -1,0 +1,8 @@
+<div class="holder" (click)="elementClick()">
+    <h3>{{info}}</h3>
+    <div class="light {{state=='ON'?'on':'off'}}"></div>
+    <div style="margin-top: 10px;">
+        <button class="button" style="margin-right:20px;" (click)="state='ON'">ON</button>
+        <button class="button" (click)="state='OFF'">OFF</button>
+    </div>
+</div>
