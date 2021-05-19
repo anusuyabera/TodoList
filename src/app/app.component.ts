@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MaxLengthValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  devices: Array<string> = ["Fan", "Light", "TV", "AC"]
-  eventName: string = ''
-  xyz(x: string) {
-    this.eventName = x
-  }
-  showVersion() {
-    alert('version 1.0.0')
-  }
 }

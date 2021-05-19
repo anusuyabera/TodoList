@@ -1,7 +1,7 @@
-<h1 (click)="showVersion()">Device Control Page</h1>
-<div class="holder">
-    {{eventName}} was clicked!
-</div>
-<ng-container *ngFor="let i of devices">
-    <app-device [info]="i" (clickedElement)="xyz($event)"></app-device>
-</ng-container>
+<h1>My Application</h1>
+<ul>
+    <li><a [routerLink] = "'/home'">Home</a></li>
+    <li><a [routerLink] = "'/about'">About</a></li>
+    <li><a [routerLink] = "'/contact'">Contact</a></li>
+</ul>
+<router-outlet></router-outlet>
