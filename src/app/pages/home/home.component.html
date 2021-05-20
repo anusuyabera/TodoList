@@ -1,1 +1,15 @@
-<h2>Home Page</h2>
+<app-page-head [level]="2" [title]="'Home Page'"></app-page-head>
+
+<div style="margin-top: 30px;">
+    <label for="name">Enter Name</label>
+    <input type="text" id="name" [(ngModel)]="username" />
+</div>
+<div>
+    <label for="name">Enter Password</label>
+    <input type="password" id="name" [(ngModel)]="password" />
+</div>
+<div>
+    <button (click)="submit()">SUBMIT</button>
+    <button (click)="reset()">RESET</button>
+</div>
+<div *ngIf="isValidUser" class="success">User logged in successfully!</div>

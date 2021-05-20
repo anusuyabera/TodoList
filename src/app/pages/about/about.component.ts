@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormulaService } from 'src/app/shared/services/formula.service';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  op: number = 1
+  constructor(private tunir: FormulaService) {
+    this.abc()
+  }
+
+  abc() {
+    this.tunir.setPage('Hello');
+  }
 
   ngOnInit(): void {
   }
