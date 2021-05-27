@@ -9,20 +9,13 @@ module.exports = {
     },
     cube: (req, res) => {
         res.send('' + req.query.a * req.query.a * req.query.a)
-    },
-    pali: (req, res) =>{
-        let rev = 0
-        let r = ''
-        // n = req.query.a
-
-        while (req.query.a != 0) {
-            r = req.query.a % 10;
-            rev = rev * 10 + r;
-            req.query.a /= 10;
-        }
-        if (req.query.a == rev)
-            res.send('True')
-        else
-            res.send('False')
     }
+    // palindrome: (req, res) => {
+    //     let result = ''
+    //     if (req && req.query && req.query.data) {
+    //         result = (req.query.data == req.query.data.split('').reverse().join(''))
+    //     } else
+    //         result = false
+    //     res.send('The string is ' + (result ? '' : 'not') + ' palindrome')
+    // }
 }

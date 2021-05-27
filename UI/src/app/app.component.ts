@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-// import { MaxLengthValidator } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(){}
-
-  ngOnInit(): void {
-  }
+  title = 'first-angular-app';
 }

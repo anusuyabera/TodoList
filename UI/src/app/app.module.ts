@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoComponent } from './todo/todo.component';
+import { TodosComponent } from './todos/todos.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent,
-    
+    TodosComponent,
   ],
   imports: [
-    BrowserModule, // => CommonModule + additional Main Module Functions
-    AppRoutingModule // => Routing Mechanism of this module
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [], // => for storing services
-  bootstrap: [AppComponent] // => Launch point function of the application
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
