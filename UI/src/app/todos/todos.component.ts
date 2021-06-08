@@ -13,24 +13,9 @@ export class TodosComponent implements OnInit {
   constructor() {
 
     this.inputTodo = "";
-
-    this.todos = [
-      {
-        content: 'First todo',
-        completed: false
-      },
-      {
-        content: 'Second todo',
-        completed: false
-      }
-    ]
+    this.todos = []
 
   }
-
-//   export class Todo implements OnInit {
-// 	content:string;
-// 	completed:boolean;
-// }
 
 ngOnInit(): void { }
 

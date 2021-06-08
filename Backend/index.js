@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
+//const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const mongoDB = 'mongodb+srv://admin:npvVvx8l9EriCVe4index @cluster0.pbcnm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const configData=require('./config')
+const mongoDB = 'mongodb+srv://'+configData.userName+':'+configData.password+'@'+configData.connectionString+'/'+configData.dbName+'?retryWrites=true&w=majority';
 
 mongoose.connect(mongoDB, {
     useUnifiedTopology: true,
@@ -13,29 +15,30 @@ mongoose.connect(mongoDB, {
 mongoose.Promise = global.Promise;
 
 mongoose.connection
-    .on('connected', function() {
+    .on('connected', ()=> {
         console.log('Mongoose default connection connected')
     })
-    .on('error', function(err) {
+    .on('error', (err)=> {
         console.log('Mongoose default connection error: ' + err)
     })
-    .on('disconnected', function() {
+    .on('disconnected', ()=> {
         console.log('Mongoose default connection disconnected')
     })
 
 // if the Node process ends, close the Mongoose connection
-process.on('SIGINT', function() {
-    mongoose.connection.close(function() {
+process.on('SIGINT', ()=> {
+    mongoose.connection.close(()=> {
         console.log('Mongoose default connection disconnected through app termination')
         process.exit(0)
     })
 })
 
+//app.use(bodyParser.json())
 app.use('/', require('./router'))
 
 const http = require('http').Server(app)
-http.listen('100', () => {
-    console.log('API running on 100 port!')
+http.listen(configData.port, () => {
+    console.log('API running on '+configData.port+' port!')
 })
 
 module.exports = app
